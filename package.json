@@ -4,13 +4,21 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "dev": "vite --mode dev",
+    "dev:test": "vite --mode development_test",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
+    "@babel/plugin-proposal-optional-chaining": "^7.18.9",
     "@vitejs/plugin-vue": "^3.0.1",
+    "axios": "^0.27.2",
     "core-js": "^3.8.3",
+    "unplugin-auto-import": "^0.11.1",
     "vite": "^3.0.4",
+    "vite-plugin-environment": "^1.1.2",
+    "vite-plugin-html-template": "^1.1.2",
     "vue": "^3.2.13",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.3",
