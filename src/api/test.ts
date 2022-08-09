@@ -12,4 +12,5 @@ export interface PGetInfo {
   keyword: string;
 }
 
+// type RequestMethod 参数为 url config
 export const getInfo = get<RGetInfo, PGetInfo>('/api/getInfo')

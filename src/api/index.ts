@@ -110,14 +110,14 @@ const wrapperRequest = (method: Method): RequestMethod => {
           ...requestConfig
         }
       ]
-      if (method === 'get' || method === 'delete') {
+      if (method.toLowerCase() === 'get' || method.toLowerCase() === 'delete') {
         realParams = [{ params, ...config, ...requestConfig }]
       }
 
-      // Method类型定义了大写的请求类型 AxiosInstance上不存在 需要断言
+      // Method类型定义了大写的请求类型 AxiosInstance上不存在 会导致报错 需要断言
       // 这里axios的定义是<T = any, R = AxiosResponse<T>, D = any>
       // 如果在responseInterceptor里完全修改了返回值，第一个参数是必传的。
-      // 剩余的参数通过扩展元组传入
+      // url为必需参数 剩余的参数通过扩展元组传入
       return instance[method as toLowerCaseMethod]<any, CommonRes<R>>(url, ...realParams)
     }
   }
